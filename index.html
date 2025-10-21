@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đại học X — Khám phá tiềm năng của bạn</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#103713',
+            accent:  '#628B35',
+            sand:    '#E2DBD0',
+            ivory:   '#FFFDF5'
+          },
+          boxShadow: { card: '0 8px 24px rgba(16,55,19,.08)' },
+          borderRadius: { xl2: '1rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    ::-webkit-scrollbar{height:8px;width:8px}
+    ::-webkit-scrollbar-thumb{background:#c8c2b6;border-radius:8px}
+  </style>
+</head>
+<body class="bg-ivory text-primary antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-ivory/90 backdrop-blur border-b border-sand">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="inline-grid place-items-center size-9 rounded-full bg-primary text-ivory font-bold">U</span>
+        <span class="font-bold text-lg">Đại học X</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 font-medium">
+        <a href="#about" class="hover:text-accent nav-link">Giới thiệu</a>
+        <a href="#faculties" class="hover:text-accent nav-link">Ngành đào tạo</a>
+        <a href="#news" class="hover:text-accent nav-link">Tin tức</a>
+        <a href="#highlights" class="hover:text-accent nav-link">Điểm nổi bật</a>
+        <a href="#apply" class="hover:text-accent nav-link">Tuyển sinh</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden rounded-xl2 border border-sand px-3 py-2 hover:bg-sand/40">Menu</button>
+
+      <a href="#apply" class="hidden md:inline-block bg-accent text-white px-4 py-2 rounded-xl2 hover:opacity-90 transition">Đăng ký tư vấn</a>
+    </div>
+
+    <!-- Mobile -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-sand bg-ivory">
+      <div class="max-w-6xl mx-auto px-4 py-3 grid gap-2">
+        <a href="#about" class="py-2 nav-link">Giới thiệu</a>
+        <a href="#faculties" class="py-2 nav-link">Ngành đào tạo</a>
+        <a href="#news" class="py-2 nav-link">Tin tức</a>
+        <a href="#highlights" class="py-2 nav-link">Điểm nổi bật</a>
+        <a href="#apply" class="py-2 text-accent font-medium nav-link">Đăng ký tư vấn</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 md:pt-28">
+
+    <!-- Hero -->
+    <section id="about" class="scroll-mt-24 md:scroll-mt-28 relative">
+      <div class="absolute inset-0 -z-10 opacity-10"
+           style="background-image: radial-gradient(600px 300px at 10% 20%, #628B35 20%, transparent 60%), radial-gradient(600px 300px at 90% 30%, #103713 15%, transparent 60%);"></div>
+
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div class="py-8">
+          <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
+            Khám phá <span class="text-accent">hành trình</span> đại học của bạn
+          </h1>
+          <p class="mt-3 text-primary/80">
+            Đại học X là môi trường học thuật hiện đại, giàu trải nghiệm thực tiễn, kết nối doanh nghiệp
+            và cộng đồng. Hãy bắt đầu từ hôm nay!
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a href="#apply" class="bg-accent text-white px-5 py-3 rounded-xl2 hover:opacity-90">Tư vấn tuyển sinh</a>
+            <a href="#video" class="border border-sand px-5 py-3 rounded-xl2 hover:bg-sand/40">Xem video</a>
+          </div>
+        </div>
+
+        <!-- Hero images: ĐÃ GẮN ASSETS -->
+        <div class="grid grid-cols-3 grid-rows-3 gap-4 h-[360px]">
+          <div class="col-span-2 row-span-3 rounded-2xl bg-sand shadow-card overflow-hidden">
+            <img src="assets/images/campus.jpg" alt="Khuôn viên trường"
+                 class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="col-span-1 row-span-2 rounded-2xl bg-sand shadow-card overflow-hidden">
+            <img src="assets/images/lab.jpg" alt="Phòng lab"
+                 class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="col-span-1 row-span-1 rounded-2xl bg-sand shadow-card overflow-hidden">
+            <img src="assets/images/club.jpg" alt="Câu lạc bộ"
+                 class="w-full h-full object-cover" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculties (3 ngành) -->
+    <section id="faculties" class="scroll-mt-24 md:scroll-mt-28 mt-12 md:mt-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-2xl font-extrabold">Ngành đào tạo</h2>
+
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- CNTT -->
+          <a href="majors/it.html" class="group rounded-2xl bg-white shadow-card border border-sand/60 overflow-hidden block">
+            <div class="h-40 bg-sand overflow-hidden">
+              <img src="assets/images/faculty-it.jpg" alt="Công nghệ thông tin" class="w-full h-full object-cover">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold group-hover:text-accent transition">Công nghệ thông tin</h3>
+              <p class="text-sm text-primary/70 mt-1">Kỹ sư phần mềm, Khoa học dữ liệu, An ninh mạng…</p>
+              <span class="mt-3 inline-block text-accent text-sm font-medium">Xem chi tiết →</span>
+            </div>
+          </a>
+
+          <!-- Công nghệ đa phương tiện -->
+          <a href="majors/multimedia-tech.html" class="group rounded-2xl bg-white shadow-card border border-sand/60 overflow-hidden block">
+            <div class="h-40 bg-sand overflow-hidden">
+              <img src="assets/images/faculty-mm-tech.jpg" alt="Công nghệ đa phương tiện" class="w-full h-full object-cover">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold group-hover:text-accent transition">Công nghệ đa phương tiện</h3>
+              <p class="text-sm text-primary/70 mt-1">3D, AR/VR, kỹ xảo, kỹ thuật số hoá nội dung…</p>
+              <span class="mt-3 inline-block text-accent text-sm font-medium">Xem chi tiết →</span>
+            </div>
+          </a>
+
+          <!-- Truyền thông đa phương tiện -->
+          <a href="majors/media-communication.html" class="group rounded-2xl bg-white shadow-card border border-sand/60 overflow-hidden block">
+            <div class="h-40 bg-sand overflow-hidden">
+              <img src="assets/images/faculty-media.jpg" alt="Truyền thông đa phương tiện" class="w-full h-full object-cover">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold group-hover:text-accent transition">Truyền thông đa phương tiện</h3>
+              <p class="text-sm text-primary/70 mt-1">Nội dung số, PR, Digital Marketing, sản xuất media…</p>
+              <span class="mt-3 inline-block text-accent text-sm font-medium">Xem chi tiết →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- News (có thể thêm ảnh nhỏ nếu muốn) -->
+
+    <!-- Highlights + VIDEO: dùng file mp4 trong assets -->
+    <section id="highlights" class="scroll-mt-24 md:scroll-mt-28 mt-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-2xl font-extrabold">Điểm nổi bật tại Đại học X</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-6">
+          <article class="rounded-2xl bg-white border border-sand/60 shadow-card p-5">
+            <div class="font-semibold">Môi trường quốc tế</div>
+            <p class="text-sm text-primary/70 mt-2">Chương trình trao đổi & học song bằng.</p>
+          </article>
+          <article class="rounded-2xl bg-white border border-sand/60 shadow-card p-5">
+            <div class="font-semibold">Thực tập doanh nghiệp</div>
+            <p class="text-sm text-primary/70 mt-2">Hơn 300+ đối tác trong và ngoài nước.</p>
+          </article>
+          <article class="rounded-2xl bg-white border border-sand/60 shadow-card p-5">
+            <div class="font-semibold">Hệ sinh thái CLB</div>
+            <p class="text-sm text-primary/70 mt-2">40+ câu lạc bộ: học thuật, thể thao, nghệ thuật…</p>
+          </article>
+        </div>
+
+        <!-- Video local (ưu tiên) -->
+        <div id="video" class="mt-6 rounded-2xl overflow-hidden shadow-card border border-sand/60">
+          <video class="w-full h-auto" controls playsinline poster="assets/images/video-thumb.jpg">
+            <source src="assets/videos/intro.mp4" type="video/mp4">
+            Trình duyệt không hỗ trợ video.
+          </video>
+
+          <!-- Nếu muốn dùng YouTube, comment video ở trên và dùng iframe dưới:
+          <div class="aspect-video">
+            <iframe class="w-full h-full"
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="Video giới thiệu"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY + Newsletter giữ nguyên (có thể thêm poster ảnh nếu muốn) -->
+  </main>
+  <!-- APPLY -->
+<section id="apply" class="scroll-mt-24 md:scroll-mt-28 mt-14">
+  <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-6">
+    <div class="rounded-2xl bg-primary text-ivory p-8 shadow-card">
+      <h3 class="text-xl font-bold">Nhận tư vấn tuyển sinh</h3>
+      <p class="mt-2 text-ivory/80">Đăng ký để nhận thông tin ngành học, học phí, học bổng và lịch xét tuyển.</p>
+
+      <!-- FORM ĐĂNG KÝ EMAIL -->
+      <form id="admissionForm" class="mt-5 grid sm:grid-cols-[1fr_auto] gap-3">
+        <input
+          type="email"
+          id="emailInput"
+          required
+          placeholder="Nhập email của bạn..."
+          class="rounded-xl2 px-4 py-3 text-primary bg-ivory border border-sand/60
+                 focus:outline-none focus:ring-2 focus:ring-accent/50"
+        />
+        <button
+          type="submit"
+          class="bg-accent text-white px-5 py-3 rounded-xl2 hover:opacity-90 transition"
+        >
+          Đăng ký
+        </button>
+      </form>
+      <p class="text-xs mt-2 text-ivory/70">
+        Khi gửi, bạn đồng ý với Chính sách bảo mật của trường.
+      </p>
+    </div>
+
+    <div class="rounded-2xl bg-white border border-sand/60 shadow-card p-8">
+      <h3 class="text-xl font-bold">Tham quan khuôn viên</h3>
+      <p class="mt-2 text-primary/70">Đặt lịch tham quan trực tiếp hoặc tour online 360°.</p>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        <a class="text-center border border-sand/60 rounded-xl2 px-4 py-3 hover:bg-sand/40"
+           href="#">Đặt lịch trực tiếp</a>
+        <a class="text-center border border-sand/60 rounded-xl2 px-4 py-3 hover:bg-sand/40"
+           href="#">Tour 360°</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALIDATE EMAIL JS -->
+<script>
+document.getElementById("admissionForm")?.addEventListener("submit", function (e) {
+  const email = document.getElementById("emailInput").value.trim();
+  const pattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  if (!pattern.test(email)) {
+    e.preventDefault();
+    alert("⚠️ Vui lòng nhập địa chỉ email hợp lệ!");
+  } else {
+    alert("✅ Cảm ơn bạn đã đăng ký tư vấn!");
+  }
+});
+</script><br><br>
+
+
+  <!-- Footer -->
+  <footer class="bg-primary text-ivory">
+    <div class="mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-grid place-items-center size-8 rounded-full bg-ivory text-primary font-bold">U</span>
+          <span class="font-semibold">Đại học X</span>
+        </div>
+        <p class="mt-3 text-ivory/80 text-sm">123 Đường Học Thuật, Quận Tri Thức, TP. Giáo Dục</p>
+      </div>
+      <div>
+        <div class="font-semibold">Về trường</div>
+        <ul class="mt-3 space-y-2 text-sm text-ivory/80">
+          <li><a href="#about" class="hover:text-white nav-link">Sứ mệnh – Tầm nhìn</a></li>
+          <li><a href="#faculties" class="hover:text-white nav-link">Ngành đào tạo</a></li>
+          <li><a href="#highlights" class="hover:text-white nav-link">Cơ sở vật chất</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Tuyển sinh</div>
+        <ul class="mt-3 space-y-2 text-sm text-ivory/80">
+          <li><a href="#apply" class="hover:text-white nav-link">Điều kiện xét tuyển</a></li>
+          <li><a href="#apply" class="hover:text-white nav-link">Học bổng</a></li>
+          <li><a href="#apply" class="hover:text-white nav-link">Hỏi – Đáp</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Liên hệ</div>
+        <ul class="mt-3 space-y-2 text-sm text-ivory/80">
+          <li>Email: admission@univ.example</li>
+          <li>ĐT: (028) 1234 5678</li>
+          <li>Thời gian: 8:00–17:00 (T2–T6)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-4 text-xs text-ivory/70">
+        © 2026 Đại học X. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: toggle mobile + đóng menu khi bấm link -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    navLinks.forEach(a => a.addEventListener('click', () => mobileMenu?.classList.add('hidden')));
+  </script>
+</body>
+</html>
