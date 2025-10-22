@@ -1,28 +1,49 @@
 <!DOCTYPE html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Công nghệ đa phương tiện — Đại học X</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config={theme:{extend:{colors:{primary:'#103713',accent:'#628B35',sand:'#E2DBD0',ivory:'#FFFDF5'},borderRadius:{xl2:'1rem'},boxShadow:{card:'0 8px 24px rgba(16,55,19,.08)'}}}}
+    /* Cấu hình Tailwind: màu, bo góc, đổ bóng */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:'#103713', /* xanh đậm */
+            accent: '#628B35', /* xanh điểm nhấn */
+            sand:   '#E2DBD0', /* be */
+            ivory:  '#FFFDF5'  /* nền sáng */
+          },
+          borderRadius: { xl2:'1rem' },
+          boxShadow: { card:'0 8px 24px rgba(16,55,19,.08)' }
+        }
+      }
+    }
   </script>
 </head>
 <body class="bg-ivory text-primary">
+
+  <!-- HEADER: chỉ 1 nút “Về trang chủ” -->
   <header class="bg-ivory border-b border-sand">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-3 flex-wrap">
-      <button id="btnBack" class="inline-flex items-center gap-2 border border-sand px-4 py-2 rounded-xl2 hover:bg-sand/40">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Về trang trước
-      </button>
-      <a href="../index.html" class="inline-flex items-center gap-2 border border-sand px-4 py-2 rounded-xl2 hover:bg-sand/40">
-        Trang chủ
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-end">
+      <a href="../index.html"
+         class="inline-flex items-center gap-2 border-2 border-accent bg-accent text-white
+                px-4 py-2 rounded-xl2 font-medium hover:opacity-90 transition">
+        Về trang chủ
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </a>
     </div>
   </header>
 
   <main class="max-w-5xl mx-auto px-4 py-6">
+    <!-- Breadcrumb điều hướng -->
     <nav class="text-sm text-primary/70 my-2">
       <a href="../index.html" class="hover:text-accent">Trang chủ</a>
       <span class="mx-2">›</span>
@@ -31,14 +52,18 @@
       <span class="text-primary font-medium">Công nghệ đa phương tiện</span>
     </nav>
 
+    <!-- Tiêu đề + mô tả ngắn -->
     <h1 class="text-3xl font-extrabold">Ngành Công nghệ đa phương tiện</h1>
     <p class="mt-3 text-primary/80">Tập trung vào 3D, VFX, AR/VR và pipeline sản xuất nội dung số.</p>
 
+    <!-- Ảnh banner ngành (đổi đúng đường dẫn assets của bạn) -->
     <div class="mt-6 rounded-2xl overflow-hidden shadow-card border border-sand/60">
-      <img src="../assets/images/mm-tech-banner.jpg" alt="Ảnh giới thiệu ngành Công nghệ đa phương tiện"
+      <img src="../assets/images/mm-tech-banner.jpg"
+           alt="Ảnh giới thiệu ngành Công nghệ đa phương tiện"
            class="w-full h-[300px] md:h-[420px] object-cover" loading="lazy">
     </div>
 
+    <!-- Video giới thiệu ngành (đổi đúng đường dẫn assets của bạn) -->
     <div class="mt-6 rounded-2xl overflow-hidden shadow-card border border-sand/60">
       <video class="w-full h-auto" controls playsinline poster="../assets/images/mm-tech-thumb.jpg">
         <source src="../assets/videos/mm-tech.mp4" type="video/mp4">
@@ -46,6 +71,7 @@
       </video>
     </div>
 
+    <!-- 3 khối thông tin chính -->
     <div class="mt-8 grid md:grid-cols-3 gap-5">
       <div class="rounded-2xl bg-white border border-sand p-5">
         <h3 class="font-semibold">Chương trình</h3>
@@ -55,6 +81,7 @@
           <li>Lập trình đồ hoạ thời gian thực</li>
         </ul>
       </div>
+
       <div class="rounded-2xl bg-white border border-sand p-5">
         <h3 class="font-semibold">Cơ hội nghề nghiệp</h3>
         <ul class="list-disc pl-5 mt-2 text-sm leading-6">
@@ -63,12 +90,16 @@
           <li>Pipeline TD</li>
         </ul>
       </div>
+
       <div class="rounded-2xl bg-white border border-sand p-5">
         <h3 class="font-semibold">Liên hệ tư vấn</h3>
         <p class="text-sm mt-2">admission@univ.example · (028) 1234 5678</p>
-        <a href="../index.html#apply" class="mt-4 inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-xl2 hover:opacity-90">
+
+        <!-- Nút mở form: “Đăng ký tư vấn” (giữ) -->
+        <button type="button"
+                class="open-apply mt-4 inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-xl2 hover:opacity-90">
           Đăng ký tư vấn
-        </a>
+        </button>
       </div>
     </div>
   </main>
@@ -77,10 +108,106 @@
     © 2026 Đại học X
   </footer>
 
+  <!-- ========== MODAL FORM ĐĂNG KÝ (độc lập trên trang ngành) ========== -->
+  <div id="applyModal" class="fixed inset-0 z-50 hidden">
+    <!-- Lớp phủ tối -->
+    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Hộp thoại -->
+    <div class="relative mx-auto max-w-xl w-[92%] mt-24 bg-ivory rounded-2xl shadow-card border border-sand">
+      <div class="px-5 py-4 flex items-center justify-between">
+        <h3 class="text-lg font-bold">Đăng ký tư vấn</h3>
+        <button id="closeApply" class="p-2 rounded-lg hover:bg-sand/60">✕</button>
+      </div>
+      <div class="px-5 pb-5">
+        <!-- Form đăng ký giống trang chủ -->
+        <form id="applyForm" class="grid gap-4 text-left">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium">Họ và tên</label>
+              <input type="text" id="nameInput" required
+                     class="mt-1 w-full rounded-xl2 border border-sand/70 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40">
+            </div>
+            <div>
+              <label class="text-sm font-medium">Email</label>
+              <input type="email" id="emailInput" required
+                     class="mt-1 w-full rounded-xl2 border border-sand/70 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium">SĐT (tuỳ chọn)</label>
+              <input type="tel" id="phoneInput"
+                     class="mt-1 w-full rounded-xl2 border border-sand/70 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40">
+            </div>
+            <div>
+              <label class="text-sm font-medium">Ngành quan tâm</label>
+              <select id="majorSelect" required
+                      class="mt-1 w-full rounded-xl2 border border-sand/70 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40">
+                <option value="">-- Chọn ngành --</option>
+                <option>Công nghệ thông tin</option>
+                <option>Công nghệ đa phương tiện</option>
+                <option>Truyền thông đa phương tiện</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm font-medium">Lời nhắn (tuỳ chọn)</label>
+            <textarea id="msgInput" rows="4"
+                      class="mt-1 w-full rounded-xl2 border border-sand/70 bg-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40"
+                      placeholder="Mong muốn/giải đáp bạn cần..."></textarea>
+          </div>
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button type="button" id="cancelApply"
+                    class="px-4 py-2 rounded-xl2 border border-sand bg-white hover:bg-sand/60">Huỷ</button>
+            <button type="submit"
+                    class="px-5 py-2.5 rounded-xl2 bg-accent text-white font-medium hover:opacity-90">Gửi đăng ký</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== JS TƯƠNG TÁC ========== -->
   <script>
-    document.getElementById('btnBack')?.addEventListener('click', () => {
-      if (history.length > 1) history.back();
-      else window.location.href = '../index.html';
+    /* --------------------------
+     * MỞ/ĐÓNG MODAL ĐĂNG KÝ
+     * Bất kỳ nút/link có class .open-apply sẽ mở modal
+     * -------------------------- */
+    const modal = document.getElementById('applyModal');
+    const closeBtn = document.getElementById('closeApply');
+    const cancelBtn = document.getElementById('cancelApply');
+
+    function openModal(){ modal.classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    function closeModal(){ modal.classList.add('hidden');    document.body.style.overflow=''; }
+
+    // Gắn mở cho tất cả nút .open-apply
+    document.querySelectorAll('.open-apply').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault(); // phòng trường hợp là thẻ <a>
+        openModal();
+      });
+    });
+
+    // Đóng modal
+    closeBtn?.addEventListener('click', closeModal);
+    cancelBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+
+    /* --------------------------
+     * VALIDATE FORM (đơn giản phía client)
+     * -------------------------- */
+    document.getElementById('applyForm')?.addEventListener('submit', function(e){
+      const email = document.getElementById('emailInput').value.trim();
+      const name  = document.getElementById('nameInput').value.trim();
+      const major = document.getElementById('majorSelect').value;
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+      if(!name){ e.preventDefault(); alert('⚠️ Vui lòng nhập họ và tên.'); return; }
+      if(!emailPattern.test(email)){ e.preventDefault(); alert('⚠️ Vui lòng nhập email hợp lệ.'); return; }
+      if(!major){ e.preventDefault(); alert('⚠️ Vui lòng chọn ngành quan tâm.'); return; }
+
+      alert('✅ Đăng ký thành công!');
+      closeModal();
     });
   </script>
 </body>
